@@ -2,6 +2,7 @@ package com.joaoricardo.cursomc.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,8 +21,8 @@ public class Endereco implements Serializable {
 	private Integer id;
 	private String logradouro;
 	private String numero;
-	private String Complemento;
-	private String Bairro;
+	private String complemento;
+	private String bairro;
 	private String cep;
 	
 	@JsonIgnore
@@ -68,8 +69,8 @@ public class Endereco implements Serializable {
 		this.id = id;
 		this.logradouro = logradouro;
 		this.numero = numero;
-		Complemento = complemento;
-		Bairro = bairro;
+		this.complemento = complemento;
+		this.bairro = bairro;
 		this.cep = cep;
 		this.cliente = cliente;
 		this.setCidade(cidade);
@@ -100,19 +101,19 @@ public class Endereco implements Serializable {
 	}
 
 	public String getComplemento() {
-		return Complemento;
+		return complemento;
 	}
 
 	public void setComplemento(String complemento) {
-		Complemento = complemento;
+		this.complemento = complemento;
 	}
 
 	public String getBairro() {
-		return Bairro;
+		return bairro;
 	}
 
 	public void setBairro(String bairro) {
-		Bairro = bairro;
+		this.bairro = bairro;
 	}
 
 	public String getCep() {
