@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.joaoricardo.cursomc.domain.Categoria;
 import com.joaoricardo.cursomc.domain.Cliente;
-import com.joaoricardo.cursomc.dto.CategoriaDTO;
 import com.joaoricardo.cursomc.dto.ClienteDTO;
 import com.joaoricardo.cursomc.dto.ClienteNewDTO;
 import com.joaoricardo.cursomc.services.ClienteService;
@@ -32,7 +30,7 @@ public class ClienteResource {
 	private ClienteService service;
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.GET)
-	public ResponseEntity<?> find(@PathVariable Integer id) {
+	public ResponseEntity<Cliente> find(@PathVariable Integer id) {
 		
 		Cliente obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
@@ -59,8 +57,8 @@ public class ClienteResource {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Void> deleteById(@PathVariable Integer id) {
-		service.deleteById(id);
+	public ResponseEntity<Void> delete(@PathVariable Integer id) {
+		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
 
