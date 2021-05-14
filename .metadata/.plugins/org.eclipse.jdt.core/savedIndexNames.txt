@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+D:\Spring boot\Spring novo\Ionic\cursomc\.metadata\.plugins\org.eclipse.jdt.core
